@@ -9,11 +9,10 @@ public class LoginPage {
     private WebDriver driver;
 
     // Locators
-    private By emailInputLocator = By.name("email");
-    private By passwordInputLocator = By.name("password");
-    private By loginButtonLocator = By.xpath("//input[@type='submit']");
-    private By forgottenPasswordLinkLocator = By.linkText("Forgotten Password");
-    private By logoutLinkLocator = By.linkText("Logout");
+    private By login = By.xpath("//span[text()='Login']");
+    private By phoneNumber_placeholder = By.xpath("//input[@placeholder='Enter Mobile Number']");
+    private By getOTP = By.xpath("//span[text()='Get OTP']//parent::button");
+    private By submitOTP = By.xpath("//span[text()='Submit OTP']//parent::button");
 
 
     // Constructor
@@ -22,14 +21,30 @@ public class LoginPage {
     }
 
     // Methods
+
+    public void clickLogin()
+    {
+        WebElement loginButton=driver.findElement(login);
+        loginButton.click();
+    }
+
+    public void enterPhoneNumber(String phoneNumber)
+    {
+        WebElement enter_phoneNumber=driver.findElement(phoneNumber_placeholder);
+        enter_phoneNumber.sendKeys(phoneNumber);
+        WebElement get_OTP= driver.findElement(getOTP);
+        get_OTP.click();
+    }
+
+    public void loginPage()
+    {
+        WebElement submit_OTP=driver.findElement(submitOTP);
+        submit_OTP.click();
+    }
+    /*
     public void enterEmail(String email) {
         WebElement emailInput = driver.findElement(emailInputLocator);
         emailInput.sendKeys(email);
-    }
-
-    public void enterPassword(String password) {
-        WebElement passwordInput = driver.findElement(passwordInputLocator);
-        passwordInput.sendKeys(password);
     }
 
     public void clickLoginButton() {
@@ -59,6 +74,6 @@ public class LoginPage {
     public String getForgotPwdPageUrl(){
         String forgotPwdPageUrl = driver.getCurrentUrl();
         return forgotPwdPageUrl;
-    }
+    }*/
 
 }
