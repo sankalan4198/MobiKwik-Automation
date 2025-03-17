@@ -15,3 +15,7 @@
  ✔️ Logging and reporting with Allure reports
  ✔️ GitHub interation
  ✔️ Scalable, reusable, and maintainable framework
+
+#Sample Report
+
+![Allure report](https://github.com/user-attachments/assets/82648018-59cc-464b-9825-b67f296ecdcd)
